@@ -1,0 +1,59 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/tareas/edit/{{tarea.id}}" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="title" placeholder="Title" value="{{tarea.title}}" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="estado">Estado</label>
+                            <select name="estado_id" class="form-control" required>
+                                <option value="">Select Estado</option>
+                                {{#each estados}}
+                                    <option value="{{this.id}}" {{#if (eq this.id tarea.estadoSelected)}}selected{{/if}}>{{this.nombre}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="prioridad">Prioridad</label>
+                            <select name="prioridad_id" class="form-control" required>
+                                <option value="">Select Prioridad</option>
+                                {{#each prioridades}}
+                                    <option value="{{this.id}}" {{#if (eq this.id tarea.prioridadSelected)}}selected{{/if}}>{{this.nombre}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="categoria">Categoria</label>
+                            <select name="categoria_id" class="form-control" required>
+                            <option value="">Select Categoria</option>
+                                {{#each categorias}}
+                                    <option value="{{this.id}}" {{#if (eq this.id tarea.categoriaSelected)}}selected{{/if}}>{{this.nombre}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea name="description" rows="2" class="form-control" placeholder="Description" required>{{tarea.description}}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" name="Fecfinal" class="form-control" value="{{tarea.Fecfinal}}" required>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

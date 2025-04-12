@@ -1,0 +1,51 @@
+<form class="d-flex mx-4 p-2" role="search" method="get" action="/tareas" >
+    <input class="form-control" type="search" placeholder="Buscar tarea..." name="search" value="{{query}}" id="buscador">
+    <button class="btn btn-outline-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+</form>
+
+{{#if tareas.length}}
+<div class="container p-4" id="listado">
+    <div class="row">
+        {{#each tareas}}
+        <div class="col-md-3 mb-4"> 
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title text-uppercase">{{title}}</h5>
+                    <div class="estado">
+                        <p class="m-1">{{estado}}</p>
+                    </div>
+                    <div class="prioridad">
+                        <p class="m-1">{{prioridad}}</p>
+                    </div>
+                    <div class="categoria">
+                        <p class="m-1">{{categoria}}</p>
+                    </div>
+                    <p class="m-2" style="align-items: start;">{{description}}</p>
+                    <div class="Tiempo mb-3">
+                        <p><i class="fa-solid fa-clock"></i> {{daysRemaining}}</p>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <a href="/tareas/delete/{{id}}" class="btn btn-danger p-2"><i class="fa-solid fa-trash"></i></a>
+                        <a href="/tareas/edit/{{id}}" class="btn btn-warning p-2"><i class="fa-solid fa-pencil"></i></a> 
+                    </div>
+                        <p class="text-muted mb-1 mt-2" style="font-size: 13px;" >{{timeago created_at}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+{{else}} 
+    <div class="col-md-4 mx-auto">
+        <div class="card card-body text-center">
+            <p>No se encontraron tareas.</p>
+            <a href="/tareas/add">¡Crea una tarea!</a>
+        </div>
+    </div>
+{{/if}}
+
+
+
+

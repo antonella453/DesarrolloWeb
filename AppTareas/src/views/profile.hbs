@@ -1,0 +1,68 @@
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <img src="/img/Perfil1.png" class="rounded-circle mb-3" alt="Imagen" width="150" height="150">
+                    <h3 class="fw-bold">Bienvenido</h3>
+                    <h4 class="mb-3 text-muted">{{user.fullname}}</h4>
+                    <p class="text-secondary">@{{user.username}}</p>
+                    <a href="/tareas" class="btn btn-outline-primary mt-3">Ver Tareas</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold text-primary">📝 Listado</h4>
+                            <p class="card-text text-muted">
+                                Visualiza tu listado de tareas para mantener tus pendientes bajo control y estar siempre organizado.
+                            </p>
+                            <a href="/tareas" class="btn btn-primary">Ver Lista</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold text-success">➕ Crear Tareas</h4>
+                            <p class="card-text text-muted">
+                                ¿Querés organizarte mejor? Registrá tus tareas aquí y gestioná tu tiempo como un pro.
+                            </p>
+                            <a href="/tareas/add" class="btn btn-success">Crear Tarea</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold text-info">📞 Contáctanos</h4>
+                            <p class="card-text text-muted">
+                                ¿Necesitás ayuda? Ingresá a nuestra sección de contacto. Estamos aquí para asistirte.
+                            </p>
+                            <a href="/tareas/contactenos" class="btn btn-info text-white">Ver Contacto</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold text-warning">📖 Quiénes Somos</h4>
+                            <p class="card-text text-muted">
+                                ¿Querés saber más sobre nosotros? Conocé nuestra historia, misión y valores.
+                            </p>
+                            <a href="/tareas/quienesSomos" class="btn btn-warning text-white">Conocenos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
