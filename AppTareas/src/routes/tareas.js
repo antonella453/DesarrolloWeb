@@ -59,7 +59,7 @@ router.post('/add', isLoggedIn, async (req, res) => {
         user_id: req.user.id
     };
     await pool.query('INSERT INTO tareas set ?', [newTarea]);
-    req.flash('success', 'Task saved successfully');
+    req.flash('success', 'Tarea agregada correctamente');
     res.redirect('/tareas');
 });
 
@@ -127,7 +127,7 @@ router.get('/', isLoggedIn, async (req, res) => {
 router.get('/delete/:id', isLoggedIn, async (req, res) => {
     const { id } = req.params;
     await pool.query('DELETE from tareas where ID = ?', [id]);
-    req.flash('success', 'Task Removed successfully');
+    req.flash('success', 'Tarea eliminada satisfactoriamente');
     res.redirect('/tareas');
 });
 
