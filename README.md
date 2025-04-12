@@ -2,7 +2,7 @@
 ### Tecnologias a utilizar:
 1. Frontend:
 	- Javascript 
-	- HTML
+	- HTML + Handlebars
 	- CSS + Bootstrap
 2. Backend: 
 	- Node.js
